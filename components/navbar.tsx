@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, BookOpen, Mail, Globe } from "lucide-react"
+import { BookOpen, Mail, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 import Link from "next/link"
@@ -26,23 +26,16 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md">
+              <span className="text-sm font-bold text-white">C/V</span>
+            </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Carlos Viloria
+              Carlos Viloria Madera
             </span>
           </Link>
 
           <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => scrollToSection("inicio")}
-              className="flex items-center gap-2"
-            >
-              <Home className="h-4 w-4" />
-              <span className="hidden sm:inline">{t.nav.home}</span>
-            </Button>
-
             <Link href="/blog">
               <Button variant="ghost" size="sm" className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4" />

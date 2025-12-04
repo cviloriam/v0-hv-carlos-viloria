@@ -357,6 +357,19 @@ export const translations = {
     contact: {
       title: "Contacto",
       subtitle: "¿Tienes un proyecto en mente? Hablemos",
+      buttons: {
+        email: "Enviar correo",
+        emailDesc: "Abre tu cliente de correo para enviarme un mensaje",
+        whatsapp: "WhatsApp",
+        whatsappDesc: "Conéctate conmigo directamente por WhatsApp",
+        linkedin: "LinkedIn",
+        linkedinDesc: "Visita mi perfil profesional en LinkedIn",
+        googleForm: "Formulario Google",
+        googleFormDesc: "Completa el formulario de contacto en Google Forms",
+        calendly: "Agendar reunión",
+        calendlyDesc: "Reserva una videollamada en mi calendario",
+      },
+      preferredMethod: "Elige el método de contacto que prefieras. Respondo en menos de 24 horas.",
       form: {
         name: "Nombre completo",
         namePlaceholder: "Tu nombre",
@@ -730,6 +743,19 @@ export const translations = {
     contact: {
       title: "Contact",
       subtitle: "Have a project in mind? Let's talk",
+      buttons: {
+        email: "Send Email",
+        emailDesc: "Open your email client to send me a message",
+        whatsapp: "WhatsApp",
+        whatsappDesc: "Connect with me directly via WhatsApp",
+        linkedin: "LinkedIn",
+        linkedinDesc: "Visit my professional LinkedIn profile",
+        googleForm: "Google Form",
+        googleFormDesc: "Complete the contact form on Google Forms",
+        calendly: "Schedule Meeting",
+        calendlyDesc: "Book a video call on my calendar",
+      },
+      preferredMethod: "Choose your preferred contact method. I respond within 24 hours.",
       form: {
         name: "Full name",
         namePlaceholder: "Your name",

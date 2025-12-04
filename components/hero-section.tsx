@@ -14,24 +14,12 @@ export function HeroSection() {
     >
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <div className="flex justify-center mb-8">
-          <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
+          <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
             <Image
               src="/images/1625617714498.jpg"
               alt="Carlos Antonio Viloria Madera"
               fill
               className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <div className="relative w-full max-w-4xl mx-auto aspect-[3/1] rounded-lg overflow-hidden shadow-xl">
-            <Image
-              src="/images/1620977966787.jpg"
-              alt="Carlos Viloria - PM | Scrum Master | Software Architect | Software Developer"
-              fill
-              className="object-contain"
               priority
             />
           </div>

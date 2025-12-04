@@ -1,48 +1,51 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react"
+import { Mail, MapPin, Clock, MessageSquare, Linkedin, Calendar, FileText } from "lucide-react"
 
 export default function ContactPage() {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus("sending")
-
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus("success")
-      setFormData({ name: "", email: "", subject: "", message: "" })
-
-      // Reset status after 5 seconds
-      setTimeout(() => setStatus("idle"), 5000)
-    }, 1500)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  const contactMethods = [
+    {
+      icon: Mail,
+      label: t.contact.buttons.email,
+      description: t.contact.buttons.emailDesc,
+      href: "mailto:contacto@carlosviloria.com",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: MessageSquare,
+      label: t.contact.buttons.whatsapp,
+      description: t.contact.buttons.whatsappDesc,
+      href: "https://wa.me/573143456789", // Replace with your actual WhatsApp number
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: Linkedin,
+      label: t.contact.buttons.linkedin,
+      description: t.contact.buttons.linkedinDesc,
+      href: "https://www.linkedin.com/in/cviloriam",
+      color: "from-blue-600 to-blue-700",
+    },
+    {
+      icon: FileText,
+      label: t.contact.buttons.googleForm,
+      description: t.contact.buttons.googleFormDesc,
+      href: "https://forms.google.com/your-form-link", // Replace with your Google Form link
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: Calendar,
+      label: t.contact.buttons.calendly,
+      description: t.contact.buttons.calendlyDesc,
+      href: "https://calendly.com/your-calendly-link", // Replace with your Calendly link
+      color: "from-orange-500 to-red-500",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -59,94 +62,42 @@ export default function ContactPage() {
           </div>
 
           <div className="grid md:grid-cols-5 gap-8">
-            {/* Contact Form */}
-            <Card className="md:col-span-3 p-6 md:p-8 bg-card/50 backdrop-blur border-border">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{t.contact.form.name}</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder={t.contact.form.namePlaceholder}
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">{t.contact.form.email}</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder={t.contact.form.emailPlaceholder}
-                      required
-                      className="bg-background/50"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="subject">{t.contact.form.subject}</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder={t.contact.form.subjectPlaceholder}
-                    required
-                    className="bg-background/50"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">{t.contact.form.message}</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder={t.contact.form.messagePlaceholder}
-                    required
-                    rows={6}
-                    className="bg-background/50 resize-none"
-                  />
-                </div>
-
-                {status === "success" && (
-                  <div className="flex items-center gap-2 text-green-500 bg-green-500/10 p-4 rounded-lg border border-green-500/20">
-                    <CheckCircle2 className="h-5 w-5" />
-                    <p className="text-sm">{t.contact.form.success}</p>
-                  </div>
-                )}
-
-                {status === "error" && (
-                  <div className="flex items-center gap-2 text-red-500 bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                    <AlertCircle className="h-5 w-5" />
-                    <p className="text-sm">{t.contact.form.error}</p>
-                  </div>
-                )}
-
-                <Button type="submit" size="lg" className="w-full" disabled={status === "sending"}>
-                  {status === "sending" ? (
-                    <>
-                      <div className="h-4 w-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
-                      {t.contact.form.sending}
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4 mr-2" />
-                      {t.contact.form.submit}
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Card>
+            <div className="md:col-span-3 space-y-4">
+              {contactMethods.map((method, index) => {
+                const Icon = method.icon
+                return (
+                  <Card
+                    key={index}
+                    className="p-6 bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-all duration-300 group"
+                  >
+                    <a href={method.href} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4">
+                      <div
+                        className={`p-3 rounded-xl bg-gradient-to-br ${method.color} group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+                          {method.label}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">{method.description}</p>
+                      </div>
+                      <div className="text-muted-foreground group-hover:text-primary transition-colors">
+                        <svg
+                          className="h-5 w-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </a>
+                  </Card>
+                )
+              })}
+            </div>
 
             {/* Contact Info */}
             <Card className="md:col-span-2 p-6 bg-gradient-to-br from-primary/10 to-accent/10 backdrop-blur border-border">
