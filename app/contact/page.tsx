@@ -14,14 +14,14 @@ export default function ContactPage() {
       icon: Mail,
       label: t.contact.buttons.email,
       description: t.contact.buttons.emailDesc,
-      href: "mailto:contacto@carlosviloria.com",
+      href: "mailto:hola@cviloriam.com",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: MessageSquare,
       label: t.contact.buttons.whatsapp,
       description: t.contact.buttons.whatsappDesc,
-      href: "https://wa.me/573143456789", // Replace with your actual WhatsApp number
+      href: "https://wa.me/573016356506",
       color: "from-green-500 to-emerald-500",
     },
     {
@@ -35,14 +35,14 @@ export default function ContactPage() {
       icon: FileText,
       label: t.contact.buttons.googleForm,
       description: t.contact.buttons.googleFormDesc,
-      href: "https://forms.google.com/your-form-link", // Replace with your Google Form link
+      href: "https://forms.gle/owQW37tS7xvEtLjX9",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Calendar,
       label: t.contact.buttons.calendly,
       description: t.contact.buttons.calendlyDesc,
-      href: "https://calendly.com/your-calendly-link", // Replace with your Calendly link
+      href: "https://calendly.com/your-calendly-link",
       color: "from-orange-500 to-red-500",
     },
   ]
@@ -133,8 +133,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Email</p>
-                      <a href="mailto:contacto@carlosviloria.com" className="text-sm text-primary hover:underline">
-                        contacto@carlosviloria.com
+                      <a href="mailto:hola@cviloriam.com" className="text-sm text-primary hover:underline">
+                        hola@cviloriam.com
                       </a>
                     </div>
                   </div>
