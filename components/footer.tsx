@@ -1,6 +1,11 @@
+"use client"
+
 import { Linkedin, Instagram, Youtube, Github, Facebook } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export function Footer() {
+  const { t } = useLanguage()
+
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -67,7 +72,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer id="contacto" className="border-t border-border bg-background">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap justify-center gap-6">
@@ -88,7 +93,9 @@ export function Footer() {
             })}
           </div>
           <div className="text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Carlos Viloria. Todos los derechos reservados.</p>
+            <p>
+              © {new Date().getFullYear()} Carlos Viloria. {t.footer.rights}
+            </p>
           </div>
         </div>
       </div>
