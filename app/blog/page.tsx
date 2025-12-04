@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/contexts/language-context"
 import { Navbar } from "@/components/navbar"
 import { translations } from "@/lib/translations"
+import { Footer } from "@/components/footer"
 
 export default function BlogPage() {
   const { t } = useLanguage()
@@ -163,6 +164,8 @@ export default function BlogPage() {
           </div>
         )}
       </main>
+
+      <Footer />
     </div>
   )
 }
