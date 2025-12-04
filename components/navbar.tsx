@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpen, Mail, Globe } from "lucide-react"
+import { BookOpen, Mail, Globe, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 import Link from "next/link"
@@ -50,6 +50,13 @@ export function Navbar() {
               </Button>
             </Link>
 
+            <Link href="/follow">
+              <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                <Users className="h-4 w-4" />
+                <span className="hidden sm:inline">{t.nav.follow}</span>
+              </Button>
+            </Link>
+
             <div className="flex items-center gap-1 ml-2 border-l border-border pl-2">
               <Button
                 variant={language === "es" ? "default" : "ghost"}
@@ -76,3 +83,5 @@ export function Navbar() {
     </nav>
   )
 }
+
+export default Navbar

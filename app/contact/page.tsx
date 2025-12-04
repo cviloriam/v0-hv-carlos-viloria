@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { Card } from "@/components/ui/card"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Mail, MapPin, Clock, MessageSquare, Linkedin, Calendar, FileText } from "lucide-react"
+import { Mail, MapPin, Clock, Linkedin, Calendar, FileText } from "lucide-react"
 
 export default function ContactPage() {
   const { t } = useLanguage()
@@ -16,13 +16,6 @@ export default function ContactPage() {
       description: t.contact.buttons.emailDesc,
       href: "mailto:hola@cviloriam.com",
       color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: MessageSquare,
-      label: t.contact.buttons.whatsapp,
-      description: t.contact.buttons.whatsappDesc,
-      href: "https://wa.me/573016356506",
-      color: "from-green-500 to-emerald-500",
     },
     {
       icon: Linkedin,

@@ -6,6 +6,7 @@ export const translations = {
       home: "Inicio",
       blog: "Blog",
       contact: "Contacto",
+      follow: "Sígueme",
     },
     hero: {
       subtitle: "Profesional Máster en TI",
@@ -398,6 +399,7 @@ export const translations = {
       home: "Home",
       blog: "Blog",
       contact: "Contact",
+      follow: "Follow Me",
     },
     hero: {
       subtitle: "IT Master Professional",
