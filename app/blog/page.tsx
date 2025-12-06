@@ -21,6 +21,14 @@ export default function BlogPage() {
       ? t.blog.articles
       : t.blog.articles.filter((article) => article.category === selectedCategory)
 
+  const getArticleSlug = (articleId: number): string => {
+    const slugMap: Record<number, string> = {
+      1: "arquitectura-microservicios-nube",
+      2: "scrum-master-facilitar-equipos-agiles",
+    }
+    return slugMap[articleId] || "arquitectura-microservicios-nube"
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -154,9 +162,7 @@ export default function BlogPage() {
                   </div>
 
                   <Button variant="ghost" className="w-full" asChild>
-                    <a href={`https://cviloriam.medium.com`} target="_blank" rel="noopener noreferrer">
-                      {t.blog.readMore}
-                    </a>
+                    <Link href={`/blog/${getArticleSlug(article.id)}`}>{t.blog.readMore}</Link>
                   </Button>
                 </CardContent>
               </Card>
