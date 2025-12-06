@@ -25,6 +25,13 @@ export default function BlogPage() {
     const slugMap: Record<number, string> = {
       1: "arquitectura-microservicios-nube",
       2: "scrum-master-facilitar-equipos-agiles",
+      3: "blockchain-mas-alla-criptomonedas",
+      4: "itil-v4-gestion-servicios-era-digital",
+      5: "ia-generativa-desarrollo-software",
+      6: "gestion-documental-ecm-filenet-p8",
+      7: "azure-devops-pipeline-cicd-dotnet",
+      8: "transformacion-digital-teoria-practica",
+      9: "clean-architecture-aplicaciones-empresariales",
     }
     return slugMap[articleId] || "arquitectura-microservicios-nube"
   }
